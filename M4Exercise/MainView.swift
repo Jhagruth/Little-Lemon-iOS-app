@@ -13,9 +13,7 @@ struct MainView: View {
             LocationsView()
                 .tag(0)
                 .tabItem {
-                    if !model.displayingReservationForm {
                         Label("Locations", systemImage: "fork.knife")
-                    }
                 }
                 .onAppear() {
                     tabSelection = 0
@@ -24,22 +22,16 @@ struct MainView: View {
             OurDishes()
                 .tag(1)
                 .tabItem {
-                    if !model.displayingReservationForm {
                         Label("Our Dishes", systemImage: "fork.knife.circle")
-                    }
                 }
                 .onAppear() {
                     tabSelection = 1
                 }
-//                .environmentObject(viewContext)
-
             
             ReservationView()
                 .tag(2)
                 .tabItem {
-                    if !model.displayingReservationForm {
                         Label("Reservation", systemImage: "square.and.pencil")
-                    }
                 }
                 .onAppear() {
                     tabSelection = 2
